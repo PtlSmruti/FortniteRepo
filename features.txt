@@ -1,0 +1,65 @@
+Features: For each feature you implement, move to the Implemented section and
+explain who did it (utorid) and how you did it. You can consider these as 
+almost user stories, if you just add a bit to them. Add more features/user stories at the bottom.
+Move them up when completed.
+
+------------------------------------------------------------------------------------
+Implemented: Done by both patel274 and alimish3
+------------------------------------------------------------------------------------
+Basic Features: Game
+0)Use of canvas
+1)Player can pick up a weapon
+2)Keyboard movement wasd
+3)Mouse to move crosshair (change directional focus, point weapon). In the basic case, to point weapon.
+4)Amunition runs out
+5)Amunition can be picked up
+6)Amunition amount on display.
+7)Health on display
+8)Can fire weapon, projectile on display
+9)Opponents can be killed
+10)Player can be killed
+11)Large world centered and scrolling around player, like in the linked examples above.
+12)Obstacles (trees and water) in the world
+13)Single type of AI, multiple AI opponents
+14)Player initially appears at simple location, for example, center of map.
+15)Multiple projectiles fired from player weapon at the same time.
+16)Projectile has limited range, impacts opponents and other obstacles in map.
+
+Advanced features:
+17)Different actors have different velocities -- Different AI with different range and different speed
+18)Movement through terrain at different velocities -- water is slower
+19)Obstacles can be destroyed -- trees can be destroyed with an axe to obtain coins 
+20)Interesting items, weapons can be picked up. Different weapons have different characteristics.
+21)Interesting items on display in inventory, can be used as in the linked example games.
+22)Multiple types of AI, and multiple opponents
+23)Mini-map on display.
+
+User Management 
+24)Login
+25)Register with different HTML element
+26)Navigation bar for easy navigation
+27)profile page with user information (GET)
+28)displays image icon 
+29)settings page
+30)change password (POST)
+31)Add a bio (PUT)
+32)delete account (DELETE)
+33)User guide for game
+34)logout
+35)Exit game once player has finished
+36)User Scores on display
+37)User authentication for every instance
+
+
+Other Features:
+-Game cursor
+-Advanced: Player starts without a weapon and can pick up one
+-AI and ammo appears at random places over time
+-Player turns into a ghost once the player dies
+-pick up coins for points instead of the number of kills
+
+------------------------------------------------------------------------------------
+Unimplemented:
+------------------------------------------------------------------------------------
+upload image to profile page
+JWT authentication

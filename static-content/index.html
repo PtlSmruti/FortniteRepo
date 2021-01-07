@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="ftdRest.js"></script>
+	<script language="javascript" src="model.js"> </script>
+	<script language="javascript" src="controller.js"> </script>
+	<img src="./images/untitled.png" id="space" style="display: none;">
+	<img src="./images/player.png" id="player" style="display: none;">
+	<img src=./images/gun.png id="gun" style="display: none;">
+	<img src=./images/tree.png id="tree" style="display: none;">
+	<img src=./images/enemy.png id="bug" style="display: none;">
+	<img src=./images/ghost.png id="ghost" style="display: none;">
+
+	<img src=./images/arrow.png id="arrow" style="display: none;">
+	<img src=./images/beforecrossbow.png id="before" style="display: none;">
+	<img src=./images/water.png id="water" style="display: none;">
+	<img src=./images/black.png id="back" style="display: none;">
+
+	<img src=./images/coins.png id="coins" style="display: none;">
+	<img src=./images/axe.png id="axe" style="display: none;">
+	<img src=./images/cent.png id="cent" style="display: none;">
+	<link rel="stylesheet" type="text/css" media="screen" href="ftd.css">
+	<style>
+		#ui_login {
+			display: true;
+		}
+
+		#ui_counter {
+			display: false;
+		}
+
+		#ui_register {
+			display: false;
+		}
+
+		#ui-navigation {
+			display: false;
+		}
+
+		#ui_setting {
+			display: false;
+		}
+
+		#ui_game {
+			display: false;
+		}
+	</style>
+	<style>
+		body {
+
+			margin: 0px;
+			border: 0;
+			background-color: #ffffff;
+			overflow: hidden;
+			/*  Disable scrollbars */
+			display: block;
+			/* No floating content on sides */
+		}
+	</style>
+	<title>Computing Science 309</title>
+</head>
+<!-- onload="setupGame(); startGame();" -->
+
+<body>
+
+	<div class= "crosshair" id="ui_game">
+		<center>
+
+			<canvas id="stage"></canvas>
+			<canvas id="miniview"> </canvas>
+			<canvas id="stats"> </canvas>
+			<div id="exitGame"><input type="submit" id="exit" value="Exit Game"></div>
+
+
+		</center>
+	</div>
+	<div class="box-main">
+		<div id="ui_login">
+			<table style="width:100%">
+				<tr>
+					<th>
+						<div>
+							<div id="oldProfile">
+								<h1> Login </h1>
+								<h3>Welcome to 2D fortnite! </h3>
+								<div class="oldList">
+									<!-- username -->
+									<div class="labels">
+										<input type="text" name="user" placeholder="User Name" value="" id="username"
+											required />
+									</div>
+									<br>
+									<!-- Password -->
+									<div class="labels">
+										<input type="password" name="password" placeholder="Password" id="password"
+											required />
+									</div>
+									<div class="labels">
+										<p class="message" id="errormsg"></p>
+									</div>
+
+									<input type="submit" id="loginSubmit" value="Login">
+									<p class="message"> Not registered? <button type="submit" name="button"
+											id="create"><h2>Create an account</h2></button> </p>
+
+								</div>
+							</div>
+						</div>
+					</th>
+					<th>
+						<div class="highscores">
+							<h1>HighScores</h1>
+							<div class="labels">
+								<table style="width:100%">
+									<tr>
+										<th>USERNAME</th>
+										<th colspan="2">SCORES</th>
+									</tr>
+									<tr>
+										<td>
+											<div class="scores" id="score_usr">
+												</div</td> <td>
+												<div class="scores" id="score_scr"></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+
+					</th>
+				</tr>
+			</table>
+		</div>
+
+		<!-- LOGIN PAGE -->
+	</div>
+
+
+
+	<!-- REGISTRATION PAGE -->
+
+	<div class="box-main">
+
+		<div id="ui_register">
+			<div class="newProfile">
+				<h1>Register</h1>
+				<h3>Create an Account to play Fortnite 2D!</h3>
+				<div>
+					<!-- USERNAME -->
+					<div class="labels">
+						<input type="text" name="user" id="userName" placeholder="username" />
+					</div>
+					<br>
+					<!--Password-->
+					<div class="labels">
+						<input type="password" name="password" placeholder="Password" id="userPassword" />
+					</div>
+					<br>
+					<!--Password Confirmation-->
+					<div class="labels">
+						<input type="password" name="password" placeholder="Re-enter Password" id="userPassword2" />
+					</div>
+					<br>
+					<!--Email address-->
+					<div class="labels">
+						<input type="text" name="Email" value="" placeholder="email address" id="userEmail">
+						<br>
+					</div>
+
+					<!--Other Information-->
+					<div class='row'>
+						<div class=" gender">
+							<div class="gender-title">
+								<label for="gender" class="title">Gender:</label>
+							</div>
+							<div class="radio">
+								<label class="radio-inline">
+									<input type="radio" name="radiobtn" value="Male" class="option-input"
+										checked>
+									<span>Male</span>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="radiobtn" value="Female" class="option-input">
+									<span>Female</span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="row birthday">
+						<div class="gender-title">
+							<label for="birthday" class="title">Birthday:</label>
+						</div>
+						<div class="labels select">
+							<select name="Month" id="month">
+								<option value="" class="userMonth">Month</option>
+							</select>
+							<select name="Day" id="day">
+								<option value="" class="userDay">Day</option>
+							</select>
+							<select name="Year" id="year">
+								<option value="" class="userYear">Year</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
+
+					<input type="submit" id="registerSubmit" value="Register">
+					<p class="message"> Already registered? <button type="submit" name="button" id="login_register"><h2>Sign
+						In</h2></button> </p>
+
+					<div class="labels">
+						<p class="message" id="regerr"></p>
+					</div>
+
+					<!-- for registered users -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="ui-navigation">
+		<div class="menu">
+			<h1 class="header">Fortnite!</h1>
+			<ul>
+				<li><a><input type="submit" id="Profile1" value="Profile"></a></li>
+				<li><a><input type="submit" id="play" value="Play Game"></a></li>
+				<li><a><input type="submit" id="settings" value="Settings"></a></li>
+				<li><a><input type="submit" id="signout" value="Sign out"></a></li>
+			</ul>
+		</div>
+		<div class="buttons">
+			<div class="line first top"></div>
+			<div class="line second bottom"></div>
+		</div>
+
+	</div>
+	<div id="ui_counter">
+		<div class="box-profile">
+			<div id="updateProfile" class="row">
+				<div class="leftDiv">
+					<span><img src="./images/profile.png" alt="user image" class="user-image" id="updateImage"></span>
+
+				</div>
+				<h1 class="nameh1" id="updateName"></h1>
+				<p class="ageh1" id="updateAge"></p>
+				<!-- <h1 id="updateName"></h1>
+			<p id="updateAge"></p> -->
+				<div class="right-div">
+					<h2>Profile <span>Info</span></h2>
+					<div class="user-info">
+						<table>
+							<tr>
+								<td>
+									<p>Biography : </p>
+								</td>
+								<td>
+									<p id="bioG"></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Email address : </p>
+								</td>
+								<td>
+									<p id="updateEmail"></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Gender :</p>
+								</td>
+								<td>
+									<p id="updateGender"></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Birthday: </p>
+								</td>
+								<td>
+									<p id="updateBirth"></p>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- ALL HTML CHANGES -->
+
+	<div class="box-profile">
+
+		<div id="ui_setting">
+			<div class="newProfile">
+				<h1>Settings</h1>
+				<h3>Update Your Profile Information</h3>
+				<div>
+					<div class="row">
+						<div class="column">
+							<h4>Change your Password:</h4>
+							<br>
+							<div class="labels">
+								<input type="password" name="OldPassword" id="oldpass" placeholder="Old Password"
+									required />
+							</div>
+							<br><br>
+							<!--Password-->
+							<div class="labels">
+								<input type="password" name="newpassword" placeholder="New Password" id="newpass"
+									required />
+							</div>
+							<br>
+							<!--Password Confirmation-->
+							<div class="labels">
+								<input type="password" name="newpassword" placeholder="Re-enter New Password"
+									id="newpass2" required />
+							</div>
+							<br>
+							<input type="submit" id="settingSubmit" value="Update">
+							<br>
+
+
+						</div>
+						<div class="column1">
+							<p></p>
+						</div>
+						<div class="column">
+							<h4>Add a bio to your profile Page:</h4>
+
+							<div class="labels">
+								<input type="text" name="bio" value="" placeholder="Add a bio For your Profile Page"
+									id="bio" required></input>
+								<input type="submit" id="settingBio" value="add">
+							</div>
+							<h4>Delete Your Account:</h4>
+							<div class="labels">
+								<input type="password" name="pass" value=""
+									placeholder="Enter your password to delete account" id="del" required></input>
+								<input type="submit" id="settingDel" value="Delete">
+							</div>
+
+						</div>
+					</div>
+
+
+					<div class="labels">
+						<p class="message" id="setError"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ALL HTML CHANGES -->
+
+
+
+	<div id="ui_game-mode">
+		<div id="pre-game">
+			<div class="box-game">
+				<h1>WELCOME TO GAME MODE!</h1>
+				<h3>The following are a few instructions.</h3>
+				<h4> Press WASD to move the player<br><br>
+					To win the game, defeat the enemies and collect as many coins they leave behind. <br><br>
+					Pick up the weapons by moving over it and use SPACE to switch between the weapons.<br><br>
+					To use an AXE press ENTER. The axe can only cut down trees and it cannot harm the enemies.<br><br>
+					<br><br>
+					To exit the game, press the EXIT button.<br><br>
+					And Remember to have FUN!  </h4>
+				<div id="start-game"><input type="submit" id="start" value="Start"><input type="submit" id="goBack"
+						value="Go Back"></div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,483 @@
+
+
+body {
+  margin: 0 auto;
+  background-image: url("./images/bg.png");
+  background-attachment: inherit;
+  background-size: 100% 100% ;
+  font-family: 'Helvetica', Arial, sans-serif;
+  color: black;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  min-height: 800px;
+  overflow: hidden;
+}
+
+#ui_game {
+  position: relative;
+  cursor: url("./images/curosr.png");
+
+}
+
+.crosshair {cursor: crosshair;}
+
+#stage{
+  cursor: url("./images/curosr.png");
+}
+
+#exitGame{
+  position: absolute;
+  top:0;
+  right:0;
+  opacity: 0.5;
+}
+
+#pre-game{
+  background-image: url("./images/untitled.png");
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  height:100%;
+  width:100%;
+}
+
+hr {
+  border-top:1px dotted #000;
+  height: 1px;
+}
+
+
+.menu{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  position: absolute;
+  background: #212121;
+  opacity: 0.8;
+  width: 250px;
+  box-sizing: border-box;
+  transition: all 250ms;
+  overflow: hidden;
+  -webkit-transform: translateZ(0) translateX(-100%);
+  transform: translateZ(0) translateX(-100%);
+  text-align:center;
+  box-shadow: 0 0 10px #000;
+}
+
+.active{
+  transform: translateZ(0) translateX(0);
+  transform: translateZ(0) translateX(0);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.header{
+  margin-top:150px;
+}
+
+
+a:hover{
+ 	color: #ff0000;
+	background: rgb(77, 124, 255);
+}
+
+.buttons{
+  width:50px;
+  height:10px;
+  margin:70px 97px;
+  padding: 10px;
+  cursor:pointer;
+
+}
+.line{
+	width: 40px;
+	height: 4px;
+  background-color:rgb(255, 0, 0);
+	transition: transform 0.3s ease, background 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+}
+
+
+.box-main {
+  margin: 0 auto;
+  
+  width: 80%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: white;
+  opacity: 0.9; 
+
+  box-shadow: 0 15px 20px -15px rgba(0, 0, 0, 0.3), 0 55px 50px -35px rgba(0, 0, 0, 0.3), 0 85px 60px -25px rgba(0, 0, 0, 0.1);
+}
+
+.box-profile {
+  margin: 0 auto;
+  width: 65%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: white;
+  opacity: 0.9; 
+  box-shadow: 0 15px 20px -15px rgba(0, 0, 0, 0.3), 0 55px 50px -35px rgba(0, 0, 0, 0.3), 0 85px 60px -25px rgba(0, 0, 0, 0.1);
+}
+
+.line.first{
+  transform: translateX(-10px) translateY(22px) rotate(-90deg);
+}
+.line.second{
+  transform: translateX(-10px) translateY(19px) rotate(0deg);
+}
+.buttons.on .line.top{
+	width: 40px;
+	transform: translateX(-10px) translateY(20px) rotate(45deg);
+}
+.buttons.on .line.bottom{
+	width: 40px;
+	transform: translateX(-10px) translateY(17px)rotate(-45deg);
+}
+
+.right-div h2 {
+  margin-left:20px;
+  text-align: left;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 3em;
+}
+.right-div span {
+  color: #d2d2d2;
+}
+
+.user-info {
+  padding: 18px;
+  width: 90%;
+  min-height: 200px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 15px 20px -15px rgba(0, 0, 0, 0.3), 0 55px 50px -35px rgba(210, 214, 213, 0.5);
+  background-color: transparent;
+  box-shadow: 0px 2px 2px 2px rgba(210, 214, 213, 0.4);
+}
+
+
+td p{
+  font-size: 20px;
+  padding: 10px 15px 10px 10px;
+  text-align: left;
+  height: 80;
+}
+
+.box-game {
+  margin: 0 auto;
+  width: 65%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: white;
+  opacity: 0.7; 
+  box-shadow: 0 15px 20px -15px rgba(0, 0, 0, 0.3), 0 55px 50px -35px rgba(0, 0, 0, 0.3), 0 85px 60px -25px rgba(0, 0, 0, 0.1);
+}
+
+ul{
+  padding:0;
+  list-style:none;
+  font-size:14px;
+}
+li{
+  padding:7px 10px;
+}
+a{
+  text-decoration:none;
+  color:#fff;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+input[type=submit]{
+  background-color:#212121;
+  border: none;
+  color:white;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  font-size: 20px;
+}
+
+.oldList{
+  margin: 0 auto;
+  width: 50%;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding-bottom: 10px;
+}
+
+.newProfile{
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding-bottom: 0px;
+
+}
+h1 {
+  padding-top: 30px;
+  text-align: center;
+  color: #1e90ff;
+  font-size: 26px;
+}
+
+
+* {
+  padding: 10;
+}
+
+
+.labels input, .labels select {
+    outline: none;
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+    background: transparent;
+    color: #757575;
+    padding: 5px 15px 7px 10px;
+}
+
+.title {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  background: transparent;
+  color: #757575;
+  font-weight: normal;
+  margin-left: 7px;
+}
+
+.gender, .birthday {
+    text-align: left;
+    padding-left: 16px;
+    margin-top: -10px;
+}
+
+.gender div, .birthday div {
+  display: inline-block;
+  padding-left: 0;
+}
+
+.option-input {
+  top: 13.33333px;
+  right: 10;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+  height: 15px;
+  width: 15px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+}
+.option-input:hover {
+  background: #0073ff;
+}
+.option-input:checked {
+  background: #0a6bb9;
+}
+
+.labels select {
+  display: inline-block;
+  width: 24%;
+  margin-left: 20px;
+  font-size: 16px;
+  color: black;
+}
+
+.birthday .select {
+  width: 82%;
+}
+
+.option-input:checked::before {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  display: inline-block;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+}
+
+
+#registerSubmit , #loginSubmit, #settingSubmit, #settingBio, #settingDel{
+  width: 150px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  outline: 0;
+  border-style: none;
+  background: #1e90ff;
+  padding: 10px 15px;
+  color: white;
+  font-weight: 200;
+  font-size: 18px;
+  color: white;
+}
+h4{
+  color:red;
+}
+.failure {
+  color: #1e90ff;
+}
+
+.radio-inline {
+  vertical-align: baseline;
+}
+.radio-inline span {
+  line-height: 4;
+  font-size: 16px;
+  padding-left: 4px;
+}
+
+
+#login, #create, #signOut, #login_register{
+  text-decoration: none;
+  color: #1e90ff;
+  background: transparent;
+  border: none;
+}
+
+.message a:hover {
+  color: rgb(0, 110, 255);
+}
+
+
+.column {
+  float: left;
+  width: 44.33%;
+}
+.column1 {
+  float: left;
+  width: 11.11%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#updateProfile {
+  padding: 20px 20px;
+}
+
+
+.leftDiv span {
+  
+  overflow: hidden;
+  text-align: center;
+  border-radius: 10%;
+  display: inline-block;
+  border: 2px solid #a9a9a9;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 250px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  box-shadow: 12px 20px 25px -13px rgba(0, 0, 0, 0.4);
+  float: left;
+  text-align: right;
+  margin: 1px 10px;
+  margin-top: 100px;
+  margin-left: -5px;
+
+}
+
+.ageh1{
+
+  height: 50px;
+  float: left;
+  text-align: right;
+  margin: 1px 10px;
+  margin-top: 420px;
+  margin-left: -180px;
+
+}
+.nameh1{
+
+  height: 50px;
+  float: left;
+  text-align: right;
+  margin: 1px 10px;
+  margin-top: 350px;
+  margin-left: -175px;
+
+}
+
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #77cee2;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input {
+  border-radius: 50%;
+}
+.option-input::after {
+  border-radius: 50%;
+}
+.radio-inline input[type=radio] {
+  position: static;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.leftDiv span:hover{
+  border-color: #b3b3b3;
+  box-shadow: 0 3px 5px -5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  
+}
+
+
+.user-image {
+  left: 0%;
+  margin-left: -150%;
+  position: relative;
+  width: auto !important;
+  height: 250px !important;
+
+}
+
+.leftDiv h1 {
+  margin-top: 800px;
+  margin-left: -5px;
+
+}
+
+.user-image:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=70);
+}
+
+.right-div {
+  
+  padding: 0px 40px 40px;
+  min-height: 10px;
+  margin-left: 230px;
+  margin-top: -50px;
+}
+
+
